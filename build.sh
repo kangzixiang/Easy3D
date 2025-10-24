@@ -9,4 +9,4 @@ if [ ! -d "$FILE" ]; then
 fi
 
 # Build project
-cd ${FILE} && cmake .. && make -j32
+cd ${FILE} && cmake -DEasy3D_ENABLE_QT=ON -DEasy3D_ENABLE_CGAL=ON -DCGAL_DO_NOT_WARN_ABOUT_CMAKE_BUILD_TYPE=TRUE .. && make -j32

@@ -117,6 +117,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 ################################################################################
 
 if (Easy3D_ENABLE_CGAL)
+    cmake_policy(SET CMP0167 OLD)  # 允许使用旧的 FindBoost 模块，抑制警告
     find_package(CGAL QUIET)
     if (CGAL_FOUND)
         if (CGAL_VERSION VERSION_GREATER_EQUAL "5.1")
